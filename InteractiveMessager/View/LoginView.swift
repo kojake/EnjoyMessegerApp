@@ -6,15 +6,24 @@
 //
 
 import SwiftUI
+import UIKit
+import FirebaseFirestoreInternal
+import FirebaseCore
+import FirebaseAuth
 
 struct LoginView: View {
     //ScreenTransition
     @State private var Showshould_SignupView = false
+    @State private var Showshould_ConetntView = false
     
     //Login
     @State private var EmailTextfield: String = ""
     @State private var PasswordTextfield: String = ""
 
+    //ErroAlert
+    @State private var ErrorAlert = false
+    @State var Errormessage: String = ""
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -29,11 +38,11 @@ struct LoginView: View {
                     VStack{
                         Text("Login").font(.largeTitle).fontWeight(.black).foregroundColor(Color.white).padding()
                         Spacer()
-                        TextField("Email✉️", text: $EmailTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
+                        TextField("Email✉️", text: $EmailTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5).keyboardType(.emailAddress)
                         TextField("Password🔑", text: $PasswordTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
                         Spacer()
                         Button(action: {
-                            
+                            Login()
                         }){
                             HStack{
                                 Text("Login").font(.title).fontWeight(.black)
@@ -49,8 +58,35 @@ struct LoginView: View {
                 }
                 Spacer()
             }
+            .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    Button("閉じる") {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
+                }
+            }
             .navigationDestination(isPresented: $Showshould_SignupView){
                 SignupView()
+            }
+            .navigationDestination(isPresented: $Showshould_ConetntView){
+                ContentView()
+            }
+        }
+        .alert(isPresented: $ErrorAlert){
+            Alert(title: Text("😞 Error 😭")
+                  ,message: Text(Errormessage)
+                  ,dismissButton: .default(Text("Ok")
+            ))
+        }
+    }
+    func Login() {
+        // Firebaseログインの処理
+        Auth.auth().signIn(withEmail: EmailTextfield, password: PasswordTextfield) { result, error in
+            if let error = error {
+                Errormessage = error.localizedDescription
+                ErrorAlert = true
+            } else {
+                Showshould_ConetntView = true
             }
         }
     }

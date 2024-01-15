@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseCore
+import FirebaseAuth
 
 struct SignupView: View {
     //ScreenTransition
     @Environment(\.dismiss) var dismiss
     
     //Signup
+    @State private var NewUsername: String = ""
+    @State private var NewInteractiveMessagerID: String = ""
     @State private var NewEmailTextfield: String = ""
     @State private var NewPasswordTextfield: String = ""
+    
+    //ErroAlert
+    @State private var ErrorAlert = false
+    @State var Errormessage: String = ""
     
     var body: some View {
         VStack{
@@ -26,29 +35,91 @@ struct SignupView: View {
             ZStack{
                 Image(systemName: "pencil").resizable().scaledToFit().frame(width: 200, height: 200).foregroundColor(Color.mint)
                 VStack{
-                    Text("Login").font(.largeTitle).fontWeight(.black).foregroundColor(Color.white).padding()
+                    Text("Sign up").font(.largeTitle).fontWeight(.black).foregroundColor(Color.white).padding()
                     Spacer()
-                    TextField("New Email✉️", text: $NewEmailTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
+                    TextField("New Username", text: $NewUsername).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
+                    TextField("New InteractiveMessagerID", text: $NewInteractiveMessagerID).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
+                    TextField("New Email✉️", text: $NewEmailTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5).keyboardType(.emailAddress)
                     TextField("New Password🔑", text: $NewPasswordTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
                     Spacer()
                     Button(action: {
-                        
+                        SignUp()
                     }){
                         HStack{
                             Text("Signup").font(.title).fontWeight(.black)
                             Image(systemName: "pencil").resizable().scaledToFit().frame(width: 30, height: 30)
                         }.frame(width: 250, height: 50).background(Color.pink.opacity(0.5)).foregroundColor(Color.white).cornerRadius(20)
-                    }
+                    }.padding()
                     Button(action: {
                         dismiss()
                     }){
                         Text("Do you have an account?😀").foregroundColor(Color.blue)
                     }.padding()
-                }.frame(width: 300, height: 400).background(Color.black.opacity(0.5)).cornerRadius(10)
+                }.frame(width: 300, height: 450).background(Color.black.opacity(0.5)).cornerRadius(10)
             }
             Spacer()
         }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("閉じる") {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+            }
+        }
+        .alert(isPresented: $ErrorAlert){
+            Alert(title: Text("😞 Error 😭")
+                  ,message: Text(Errormessage)
+                  ,dismissButton: .default(Text("Ok")
+            ))
+        }
         .navigationBarBackButtonHidden(true)
+    }
+    func SignUp() {
+        Auth.auth().createUser(withEmail: NewEmailTextfield, password: NewPasswordTextfield) { (result, error) in
+            if let error = error {
+                // エラーがある場合、エラーメッセージをセットしてアラートを表示
+                Errormessage = error.localizedDescription
+                ErrorAlert = true
+            } else {
+                if NewUsername == ""{
+                    Errormessage = "ユーザーネームを入力してください"
+                    ErrorAlert = true
+                } else if NewInteractiveMessagerID == ""{
+                    Errormessage = "インタラクティブメッセンジャーIDを入力してください"
+                    ErrorAlert = true
+                } else if NewEmailTextfield == ""{
+                    Errormessage = "Emailを入力してください"
+                    ErrorAlert = true
+                } else if NewPasswordTextfield == ""{
+                    Errormessage = "パスワードを入力してください"
+                    ErrorAlert = true
+                } else {
+                    AccountCreate()
+                }
+            }
+        }
+    }
+    func AccountCreate() {
+        let db = Firestore.firestore()
+        
+        // 新しいコレクションを作成
+        let collectionReference = db.collection("UserList")
+        
+        // ドキュメントを追加
+        let data: [String: Any] = [
+            "Username": NewUsername,
+            "NewInteractiveMessagerID": NewInteractiveMessagerID,
+            "Email": NewEmailTextfield,
+            "Password": NewPasswordTextfield
+        ]
+        
+        collectionReference.document(NewEmailTextfield).setData(data) { error in
+            if let error = error {
+                print("\(error)")
+            } else {
+                print("document add faile")
+            }
+        }
     }
 }
 

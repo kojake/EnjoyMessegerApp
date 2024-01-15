@@ -53,7 +53,7 @@ struct ContentView: View {
         .navigationBarBackButtonHidden(true)
     }
     func HelloWordDecision() {
-        let HelloWordList: [String] = ["若者ってなんで選挙\nでないんだ？"]
+        let HelloWordList: [String] = ["若者ってなんで選挙\nでないんだ？", "I Love You❤️", "蛙化現象まじで理解できない", "Hello World", "YEAH-------!!!"]
         HelloWord = HelloWordList.randomElement()!
     }
 }
