@@ -94,30 +94,8 @@ struct SignupView: View {
                     Errormessage = "パスワードを入力してください"
                     ErrorAlert = true
                 } else {
-                    AccountCreate()
+                    AccountCreate(NewUsername: NewUsername, NewInteractiveMessagerID: NewInteractiveMessagerID, NewEmailTextfield: NewEmailTextfield, NewPasswordTextfield: NewPasswordTextfield)
                 }
-            }
-        }
-    }
-    func AccountCreate() {
-        let db = Firestore.firestore()
-        
-        // 新しいコレクションを作成
-        let collectionReference = db.collection("UserList")
-        
-        // ドキュメントを追加
-        let data: [String: Any] = [
-            "Username": NewUsername,
-            "NewInteractiveMessagerID": NewInteractiveMessagerID,
-            "Email": NewEmailTextfield,
-            "Password": NewPasswordTextfield
-        ]
-        
-        collectionReference.document(NewEmailTextfield).setData(data) { error in
-            if let error = error {
-                print("\(error)")
-            } else {
-                print("document add faile")
             }
         }
     }

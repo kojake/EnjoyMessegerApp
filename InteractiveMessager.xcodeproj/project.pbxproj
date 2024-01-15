@@ -47,6 +47,8 @@
 		97E15B6D2B5542DC0077E4BC /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B6C2B5542DC0077E4BC /* FirebaseRemoteConfigSwift */; };
 		97E15B6F2B5542DC0077E4BC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B6E2B5542DC0077E4BC /* FirebaseStorage */; };
 		97E15B712B5542DC0077E4BC /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B702B5542DC0077E4BC /* FirebaseStorageCombine-Community */; };
+		97E15B732B5564F90077E4BC /* MessegeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E15B722B5564F90077E4BC /* MessegeView.swift */; };
+		97E15B752B5565250077E4BC /* AccountCreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E15B742B5565250077E4BC /* AccountCreateModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		97E15B2B2B5506F70077E4BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97E15B382B5509190077E4BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		97E15B3A2B550D830077E4BC /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		97E15B722B5564F90077E4BC /* MessegeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessegeView.swift; sourceTree = "<group>"; };
+		97E15B742B5565250077E4BC /* AccountCreateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				9728D37B2B54F83300D44633 /* LoginView.swift */,
 				9728D3892B54FD9D00D44633 /* SignupView.swift */,
 				97E15B382B5509190077E4BC /* ContentView.swift */,
+				97E15B722B5564F90077E4BC /* MessegeView.swift */,
 				97E15B3A2B550D830077E4BC /* AddFriendView.swift */,
 			);
 			path = View;
@@ -155,6 +160,7 @@
 		9728D3882B54F8F300D44633 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				97E15B742B5565250077E4BC /* AccountCreateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 				9728D37C2B54F83300D44633 /* LoginView.swift in Sources */,
 				97E15B392B5509190077E4BC /* ContentView.swift in Sources */,
 				97E15B3B2B550D830077E4BC /* AddFriendView.swift in Sources */,
+				97E15B732B5564F90077E4BC /* MessegeView.swift in Sources */,
+				97E15B752B5565250077E4BC /* AccountCreateModel.swift in Sources */,
 				9728D37A2B54F83300D44633 /* InteractiveMessagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
