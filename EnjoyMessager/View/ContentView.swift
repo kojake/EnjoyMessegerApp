@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  InteractiveMessager
+//  EnjoyMessager
 //
 //  Created by kaito on 2024/01/15.
 //

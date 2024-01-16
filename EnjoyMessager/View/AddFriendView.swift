@@ -1,6 +1,6 @@
 //
 //  AddFriendView.swift
-//  InteractiveMessager
+//  EnjoyMessager
 //
 //  Created by kaito on 2024/01/15.
 //
@@ -39,7 +39,7 @@ struct AddFriendView: View {
             }){
                 HStack{
                     Image(systemName: "pencil.and.outline").frame(width: 60, height: 60).background(Color.gray).foregroundColor(Color.white).cornerRadius(10).padding()
-                    Text("InteractiveMessager IDで追加").foregroundColor(Color.black)
+                    Text("EnjoyMessager IDで追加").foregroundColor(Color.black)
                     Spacer()
                 }
             }

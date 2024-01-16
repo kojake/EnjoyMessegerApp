@@ -1,6 +1,6 @@
 //
 //  SignupView.swift
-//  InteractiveMessager
+//  EnjoyMessager
 //
 //  Created by kaito on 2024/01/15.
 //
@@ -13,10 +13,11 @@ import FirebaseAuth
 struct SignupView: View {
     //ScreenTransition
     @Environment(\.dismiss) var dismiss
+    @State private var Showshould_ContentView = false
     
     //Signup
     @State private var NewUsername: String = ""
-    @State private var NewInteractiveMessagerID: String = ""
+    @State private var NewEnjoyMessagerID: String = ""
     @State private var NewEmailTextfield: String = ""
     @State private var NewPasswordTextfield: String = ""
     
@@ -38,7 +39,7 @@ struct SignupView: View {
                     Text("Sign up").font(.largeTitle).fontWeight(.black).foregroundColor(Color.white).padding()
                     Spacer()
                     TextField("New Username", text: $NewUsername).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
-                    TextField("New InteractiveMessagerID", text: $NewInteractiveMessagerID).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
+                    TextField("New EnjoyMessagerID", text: $NewEnjoyMessagerID).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
                     TextField("New Email✉️", text: $NewEmailTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5).keyboardType(.emailAddress)
                     TextField("New Password🔑", text: $NewPasswordTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
                     Spacer()
@@ -73,6 +74,9 @@ struct SignupView: View {
             ))
         }
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $Showshould_ContentView){
+            ContentView()
+        }
     }
     func SignUp() {
         Auth.auth().createUser(withEmail: NewEmailTextfield, password: NewPasswordTextfield) { (result, error) in
@@ -84,7 +88,7 @@ struct SignupView: View {
                 if NewUsername == ""{
                     Errormessage = "ユーザーネームを入力してください"
                     ErrorAlert = true
-                } else if NewInteractiveMessagerID == ""{
+                } else if NewEnjoyMessagerID == ""{
                     Errormessage = "インタラクティブメッセンジャーIDを入力してください"
                     ErrorAlert = true
                 } else if NewEmailTextfield == ""{
@@ -94,7 +98,8 @@ struct SignupView: View {
                     Errormessage = "パスワードを入力してください"
                     ErrorAlert = true
                 } else {
-                    AccountCreate(NewUsername: NewUsername, NewInteractiveMessagerID: NewInteractiveMessagerID, NewEmailTextfield: NewEmailTextfield, NewPasswordTextfield: NewPasswordTextfield)
+                    AccountCreate(NewUsername: NewUsername, NewEnjoyMessagerID: NewEnjoyMessagerID, NewEmailTextfield: NewEmailTextfield, NewPasswordTextfield: NewPasswordTextfield)
+                    Showshould_ContentView = true
                 }
             }
         }

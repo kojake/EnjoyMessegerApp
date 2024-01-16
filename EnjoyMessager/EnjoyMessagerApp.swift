@@ -1,6 +1,6 @@
 //
-//  InteractiveMessagerApp.swift
-//  InteractiveMessager
+//  EnjoyMessagerApp.swift
+//  EnjoyMessager
 //
 //  Created by kaito on 2024/01/15.
 //
@@ -19,7 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct InteractiveMessagerApp: App {
+struct EnjoyMessagerApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     

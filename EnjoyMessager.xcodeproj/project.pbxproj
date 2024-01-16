@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9728D37A2B54F83300D44633 /* InteractiveMessagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9728D3792B54F83300D44633 /* InteractiveMessagerApp.swift */; };
+		9728D37A2B54F83300D44633 /* EnjoyMessagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9728D3792B54F83300D44633 /* EnjoyMessagerApp.swift */; };
 		9728D37C2B54F83300D44633 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9728D37B2B54F83300D44633 /* LoginView.swift */; };
 		9728D37E2B54F83700D44633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9728D37D2B54F83700D44633 /* Assets.xcassets */; };
 		9728D3812B54F83700D44633 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9728D3802B54F83700D44633 /* Preview Assets.xcassets */; };
@@ -52,8 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9728D3762B54F83300D44633 /* InteractiveMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9728D3792B54F83300D44633 /* InteractiveMessagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveMessagerApp.swift; sourceTree = "<group>"; };
+		9728D3762B54F83300D44633 /* EnjoyMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnjoyMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9728D3792B54F83300D44633 /* EnjoyMessagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnjoyMessagerApp.swift; sourceTree = "<group>"; };
 		9728D37B2B54F83300D44633 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9728D37D2B54F83700D44633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9728D3802B54F83700D44633 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		9728D36D2B54F83300D44633 = {
 			isa = PBXGroup;
 			children = (
-				9728D3782B54F83300D44633 /* InteractiveMessager */,
+				9728D3782B54F83300D44633 /* EnjoyMessager */,
 				9728D3772B54F83300D44633 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,22 +119,22 @@
 		9728D3772B54F83300D44633 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9728D3762B54F83300D44633 /* InteractiveMessager.app */,
+				9728D3762B54F83300D44633 /* EnjoyMessager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9728D3782B54F83300D44633 /* InteractiveMessager */ = {
+		9728D3782B54F83300D44633 /* EnjoyMessager */ = {
 			isa = PBXGroup;
 			children = (
-				9728D3792B54F83300D44633 /* InteractiveMessagerApp.swift */,
+				9728D3792B54F83300D44633 /* EnjoyMessagerApp.swift */,
 				9728D3882B54F8F300D44633 /* Model */,
 				9728D3872B54F8D500D44633 /* View */,
 				97E15B2B2B5506F70077E4BC /* GoogleService-Info.plist */,
 				9728D37D2B54F83700D44633 /* Assets.xcassets */,
 				9728D37F2B54F83700D44633 /* Preview Content */,
 			);
-			path = InteractiveMessager;
+			path = EnjoyMessager;
 			sourceTree = "<group>";
 		};
 		9728D37F2B54F83700D44633 /* Preview Content */ = {
@@ -168,9 +168,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9728D3752B54F83300D44633 /* InteractiveMessager */ = {
+		9728D3752B54F83300D44633 /* EnjoyMessager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9728D3842B54F83700D44633 /* Build configuration list for PBXNativeTarget "InteractiveMessager" */;
+			buildConfigurationList = 9728D3842B54F83700D44633 /* Build configuration list for PBXNativeTarget "EnjoyMessager" */;
 			buildPhases = (
 				9728D3722B54F83300D44633 /* Sources */,
 				9728D3732B54F83300D44633 /* Frameworks */,
@@ -180,7 +180,7 @@
 			);
 			dependencies = (
 			);
-			name = InteractiveMessager;
+			name = EnjoyMessager;
 			packageProductDependencies = (
 				97E15B2E2B5507720077E4BC /* FirebaseAnalytics */,
 				97E15B302B5507720077E4BC /* FirebaseAnalyticsOnDeviceConversion */,
@@ -216,7 +216,7 @@
 				97E15B702B5542DC0077E4BC /* FirebaseStorageCombine-Community */,
 			);
 			productName = InteractiveMessager;
-			productReference = 9728D3762B54F83300D44633 /* InteractiveMessager.app */;
+			productReference = 9728D3762B54F83300D44633 /* EnjoyMessager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9728D3712B54F83300D44633 /* Build configuration list for PBXProject "InteractiveMessager" */;
+			buildConfigurationList = 9728D3712B54F83300D44633 /* Build configuration list for PBXProject "EnjoyMessager" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -250,7 +250,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9728D3752B54F83300D44633 /* InteractiveMessager */,
+				9728D3752B54F83300D44633 /* EnjoyMessager */,
 			);
 		};
 /* End PBXProject section */
@@ -279,7 +279,7 @@
 				97E15B3B2B550D830077E4BC /* AddFriendView.swift in Sources */,
 				97E15B732B5564F90077E4BC /* MessegeView.swift in Sources */,
 				97E15B752B5565250077E4BC /* AccountCreateModel.swift in Sources */,
-				9728D37A2B54F83300D44633 /* InteractiveMessagerApp.swift in Sources */,
+				9728D37A2B54F83300D44633 /* EnjoyMessagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +412,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InteractiveMessager/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EnjoyMessager/Preview Content\"";
 				DEVELOPMENT_TEAM = PQ42DZZXUS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -426,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kaito.InteractiveMessager;
+				PRODUCT_BUNDLE_IDENTIFIER = kaito.EnjoyMessager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -441,7 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InteractiveMessager/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EnjoyMessager/Preview Content\"";
 				DEVELOPMENT_TEAM = PQ42DZZXUS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kaito.InteractiveMessager;
+				PRODUCT_BUNDLE_IDENTIFIER = kaito.EnjoyMessager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -466,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9728D3712B54F83300D44633 /* Build configuration list for PBXProject "InteractiveMessager" */ = {
+		9728D3712B54F83300D44633 /* Build configuration list for PBXProject "EnjoyMessager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9728D3822B54F83700D44633 /* Debug */,
@@ -475,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9728D3842B54F83700D44633 /* Build configuration list for PBXNativeTarget "InteractiveMessager" */ = {
+		9728D3842B54F83700D44633 /* Build configuration list for PBXNativeTarget "EnjoyMessager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9728D3852B54F83700D44633 /* Debug */,
