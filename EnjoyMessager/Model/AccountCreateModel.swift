@@ -9,26 +9,43 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-func AccountCreate(NewUsername: String, NewEnjoyMessagerID: String, NewEmailTextfield: String, NewPasswordTextfield: String) {
+func AccountCreate(NewUsername: String, NewEnjoyMessagerID: String, NewEmail: String, NewPassword: String) {
     let db = Firestore.firestore()
     
-    // 新しいコレクションを作成
     let collectionReference = db.collection("UserList")
     
-    // ドキュメントを追加
-    let data: [String: Any] = [
+    let NewAccountData: [String: Any] = [
         "Username": NewUsername,
         "NewEnjoyMessagerID": NewEnjoyMessagerID,
-        "Email": NewEmailTextfield,
-        "Password": NewPasswordTextfield,
+        "Email": NewEmail,
+        "Password": NewPassword,
         "FriendList": [String]()
     ]
     
-    collectionReference.document(NewEmailTextfield).setData(data) { error in
+    collectionReference.document(NewEmail).setData(NewAccountData) { error in
         if let error = error {
             print("\(error)")
         } else {
             print("document add faile")
+        }
+    }
+}
+
+func DatabaseEnjoyMessagerIDAdd(NewUsername: String, NewEnjoyMessagerID: String, NewEmail: String){
+    let db = Firestore.firestore()
+    
+    let collectionReference = db.collection("EnjoyMessagerIDList")
+    
+    let EnjoyMessagerIDData: [String: Any] = [
+        "Username": NewUsername,
+        "Email": NewEmail
+    ]
+    
+    collectionReference.document(NewEnjoyMessagerID).setData(EnjoyMessagerIDData) { error in
+        if let error = error {
+            print("\(error)")
+        } else {
+            print("document add file")
         }
     }
 }

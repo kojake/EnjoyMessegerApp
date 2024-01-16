@@ -10,6 +10,7 @@ import SwiftUI
 struct AddFriendView: View {
     //ScreenTransition
     @Environment(\.dismiss) var dismiss
+    @State private var Showshould_EnjoyMessagerIDAddFriendView = false
     
     var body: some View {
         VStack{
@@ -35,7 +36,7 @@ struct AddFriendView: View {
                 }
             }
             Button(action: {
-                
+                Showshould_EnjoyMessagerIDAddFriendView = true
             }){
                 HStack{
                     Image(systemName: "pencil.and.outline").frame(width: 60, height: 60).background(Color.gray).foregroundColor(Color.white).cornerRadius(10).padding()
@@ -46,6 +47,9 @@ struct AddFriendView: View {
             Spacer()
         }
         .navigationBarBackButtonHidden(true)
+        .sheet(isPresented: $Showshould_EnjoyMessagerIDAddFriendView){
+            EnjoyMessagerIDAddFriendView()
+        }
     }
 }
 

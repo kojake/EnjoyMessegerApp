@@ -18,8 +18,8 @@ struct SignupView: View {
     //Signup
     @State private var NewUsername: String = ""
     @State private var NewEnjoyMessagerID: String = ""
-    @State private var NewEmailTextfield: String = ""
-    @State private var NewPasswordTextfield: String = ""
+    @State private var NewEmail: String = ""
+    @State private var NewPassword: String = ""
     
     //ErroAlert
     @State private var ErrorAlert = false
@@ -40,8 +40,8 @@ struct SignupView: View {
                     Spacer()
                     TextField("New Username", text: $NewUsername).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
                     TextField("New EnjoyMessagerID", text: $NewEnjoyMessagerID).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
-                    TextField("New Email✉️", text: $NewEmailTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5).keyboardType(.emailAddress)
-                    TextField("New Password🔑", text: $NewPasswordTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
+                    TextField("New Email✉️", text: $NewEmail).frame(width: 280, height: 50).background(Color.white).cornerRadius(5).keyboardType(.emailAddress)
+                    TextField("New Password🔑", text: $NewPassword).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
                     Spacer()
                     Button(action: {
                         SignUp()
@@ -75,11 +75,11 @@ struct SignupView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $Showshould_ContentView){
-            ContentView(Email: $NewEmailTextfield)
+            ContentView(Email: $NewEmail)
         }
     }
     func SignUp() {
-        Auth.auth().createUser(withEmail: NewEmailTextfield, password: NewPasswordTextfield) { (result, error) in
+        Auth.auth().createUser(withEmail: NewEmail, password: NewPassword) { (result, error) in
             if let error = error {
                 // エラーがある場合、エラーメッセージをセットしてアラートを表示
                 Errormessage = error.localizedDescription
@@ -91,14 +91,15 @@ struct SignupView: View {
                 } else if NewEnjoyMessagerID == ""{
                     Errormessage = "インタラクティブメッセンジャーIDを入力してください"
                     ErrorAlert = true
-                } else if NewEmailTextfield == ""{
+                } else if NewEmail == ""{
                     Errormessage = "Emailを入力してください"
                     ErrorAlert = true
-                } else if NewPasswordTextfield == ""{
+                } else if NewPassword == ""{
                     Errormessage = "パスワードを入力してください"
                     ErrorAlert = true
                 } else {
-                    AccountCreate(NewUsername: NewUsername, NewEnjoyMessagerID: NewEnjoyMessagerID, NewEmailTextfield: NewEmailTextfield, NewPasswordTextfield: NewPasswordTextfield)
+                    AccountCreate(NewUsername: NewUsername, NewEnjoyMessagerID: NewEnjoyMessagerID, NewEmail: NewEmail, NewPassword: NewPassword)
+                    DatabaseEnjoyMessagerIDAdd(NewUsername: NewUsername, NewEnjoyMessagerID: NewEnjoyMessagerID, NewEmail: NewEmail)
                     Showshould_ContentView = true
                 }
             }

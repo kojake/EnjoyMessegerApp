@@ -17,8 +17,8 @@ struct LoginView: View {
     @State private var Showshould_ConetntView = false
     
     //Login
-    @State private var EmailTextfield: String = ""
-    @State private var PasswordTextfield: String = ""
+    @State private var Email: String = ""
+    @State private var Password: String = ""
 
     //ErroAlert
     @State private var ErrorAlert = false
@@ -38,8 +38,8 @@ struct LoginView: View {
                     VStack{
                         Text("Login").font(.largeTitle).fontWeight(.black).foregroundColor(Color.white).padding()
                         Spacer()
-                        TextField("Email✉️", text: $EmailTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5).keyboardType(.emailAddress)
-                        TextField("Password🔑", text: $PasswordTextfield).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
+                        TextField("Email✉️", text: $Email).frame(width: 280, height: 50).background(Color.white).cornerRadius(5).keyboardType(.emailAddress)
+                        TextField("Password🔑", text: $Password).frame(width: 280, height: 50).background(Color.white).cornerRadius(5)
                         Spacer()
                         Button(action: {
                             Login()
@@ -69,7 +69,7 @@ struct LoginView: View {
                 SignupView()
             }
             .navigationDestination(isPresented: $Showshould_ConetntView){
-                ContentView(Email: $EmailTextfield)
+                ContentView(Email: $Email)
             }
         }
         .alert(isPresented: $ErrorAlert){
@@ -81,7 +81,7 @@ struct LoginView: View {
     }
     func Login() {
         // Firebaseログインの処理
-        Auth.auth().signIn(withEmail: EmailTextfield, password: PasswordTextfield) { result, error in
+        Auth.auth().signIn(withEmail: Email, password: Password) { result, error in
             if let error = error {
                 Errormessage = error.localizedDescription
                 ErrorAlert = true
