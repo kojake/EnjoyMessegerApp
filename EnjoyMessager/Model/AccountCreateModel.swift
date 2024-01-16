@@ -5,7 +5,6 @@
 //  Created by kaito on 2024/01/15.
 //
 
-import Foundation
 import UIKit
 import Firebase
 import FirebaseFirestore
@@ -21,7 +20,8 @@ func AccountCreate(NewUsername: String, NewEnjoyMessagerID: String, NewEmailText
         "Username": NewUsername,
         "NewEnjoyMessagerID": NewEnjoyMessagerID,
         "Email": NewEmailTextfield,
-        "Password": NewPasswordTextfield
+        "Password": NewPasswordTextfield,
+        "FriendList": [String]()
     ]
     
     collectionReference.document(NewEmailTextfield).setData(data) { error in

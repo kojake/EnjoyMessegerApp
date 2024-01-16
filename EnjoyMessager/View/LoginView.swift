@@ -69,7 +69,7 @@ struct LoginView: View {
                 SignupView()
             }
             .navigationDestination(isPresented: $Showshould_ConetntView){
-                ContentView()
+                ContentView(Email: $EmailTextfield)
             }
         }
         .alert(isPresented: $ErrorAlert){

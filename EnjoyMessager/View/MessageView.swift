@@ -7,9 +7,12 @@
 
 import SwiftUI
 
-struct MessegeView: View {
+struct MessageView: View {
     //ScreenTransition
     @Environment(\.dismiss) var dismiss
+    
+    //Friend
+
     
     var body: some View {
         VStack{
@@ -23,9 +26,10 @@ struct MessegeView: View {
             }
             Spacer()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    MessegeView()
+    MessageView()
 }

@@ -75,7 +75,7 @@ struct SignupView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $Showshould_ContentView){
-            ContentView()
+            ContentView(Email: $NewEmailTextfield)
         }
     }
     func SignUp() {

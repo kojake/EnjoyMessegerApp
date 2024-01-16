@@ -12,6 +12,7 @@
 		9728D37E2B54F83700D44633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9728D37D2B54F83700D44633 /* Assets.xcassets */; };
 		9728D3812B54F83700D44633 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9728D3802B54F83700D44633 /* Preview Assets.xcassets */; };
 		9728D38A2B54FD9D00D44633 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9728D3892B54FD9D00D44633 /* SignupView.swift */; };
+		97D13BEE2B56630A00D4A376 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D13BED2B56630A00D4A376 /* LoadingView.swift */; };
 		97E15B2C2B5506F70077E4BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E15B2B2B5506F70077E4BC /* GoogleService-Info.plist */; };
 		97E15B2F2B5507720077E4BC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B2E2B5507720077E4BC /* FirebaseAnalytics */; };
 		97E15B312B5507720077E4BC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B302B5507720077E4BC /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -47,7 +48,7 @@
 		97E15B6D2B5542DC0077E4BC /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B6C2B5542DC0077E4BC /* FirebaseRemoteConfigSwift */; };
 		97E15B6F2B5542DC0077E4BC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B6E2B5542DC0077E4BC /* FirebaseStorage */; };
 		97E15B712B5542DC0077E4BC /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 97E15B702B5542DC0077E4BC /* FirebaseStorageCombine-Community */; };
-		97E15B732B5564F90077E4BC /* MessegeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E15B722B5564F90077E4BC /* MessegeView.swift */; };
+		97E15B732B5564F90077E4BC /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E15B722B5564F90077E4BC /* MessageView.swift */; };
 		97E15B752B5565250077E4BC /* AccountCreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E15B742B5565250077E4BC /* AccountCreateModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +59,11 @@
 		9728D37D2B54F83700D44633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9728D3802B54F83700D44633 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9728D3892B54FD9D00D44633 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		97D13BED2B56630A00D4A376 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		97E15B2B2B5506F70077E4BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97E15B382B5509190077E4BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		97E15B3A2B550D830077E4BC /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
-		97E15B722B5564F90077E4BC /* MessegeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessegeView.swift; sourceTree = "<group>"; };
+		97E15B722B5564F90077E4BC /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		97E15B742B5565250077E4BC /* AccountCreateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +153,8 @@
 				9728D37B2B54F83300D44633 /* LoginView.swift */,
 				9728D3892B54FD9D00D44633 /* SignupView.swift */,
 				97E15B382B5509190077E4BC /* ContentView.swift */,
-				97E15B722B5564F90077E4BC /* MessegeView.swift */,
+				97D13BED2B56630A00D4A376 /* LoadingView.swift */,
+				97E15B722B5564F90077E4BC /* MessageView.swift */,
 				97E15B3A2B550D830077E4BC /* AddFriendView.swift */,
 			);
 			path = View;
@@ -277,7 +280,8 @@
 				9728D37C2B54F83300D44633 /* LoginView.swift in Sources */,
 				97E15B392B5509190077E4BC /* ContentView.swift in Sources */,
 				97E15B3B2B550D830077E4BC /* AddFriendView.swift in Sources */,
-				97E15B732B5564F90077E4BC /* MessegeView.swift in Sources */,
+				97E15B732B5564F90077E4BC /* MessageView.swift in Sources */,
+				97D13BEE2B56630A00D4A376 /* LoadingView.swift in Sources */,
 				97E15B752B5565250077E4BC /* AccountCreateModel.swift in Sources */,
 				9728D37A2B54F83300D44633 /* EnjoyMessagerApp.swift in Sources */,
 			);
