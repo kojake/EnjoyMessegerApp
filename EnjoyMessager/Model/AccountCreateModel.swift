@@ -19,7 +19,8 @@ func AccountCreate(NewUsername: String, NewEnjoyMessagerID: String, NewEmail: St
         "NewEnjoyMessagerID": NewEnjoyMessagerID,
         "Email": NewEmail,
         "Password": NewPassword,
-        "FriendList": [String]()
+        "FriendList": [String](),
+        "RoomList": [String]()
     ]
     
     collectionReference.document(NewEmail).setData(NewAccountData) { error in
